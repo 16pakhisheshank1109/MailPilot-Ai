@@ -1,0 +1,67 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Frontend: Install dependencies",
+      "type": "process",
+      "command": "npm",
+      "args": ["ci"],
+      "options": {
+        "cwd": "${workspaceFolder}/frontend"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Frontend: Dev server",
+      "type": "process",
+      "command": "npm",
+      "args": ["run", "dev"],
+      "options": {
+        "cwd": "${workspaceFolder}/frontend"
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Frontend: Build",
+      "type": "process",
+      "command": "npm",
+      "args": ["run", "build"],
+      "options": {
+        "cwd": "${workspaceFolder}/frontend"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Frontend: Lint",
+      "type": "process",
+      "command": "npm",
+      "args": ["run", "lint"],
+      "options": {
+        "cwd": "${workspaceFolder}/frontend"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Backend: Create virtual environment",
+      "type": "process",
+      "command": "python3.11",
+      "args": ["-m", "venv", ".venv"],
+      "options": {
+        "cwd": "${workspaceFolder}/Backend"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Backend: API",
+      "type": "process",
+      "command": "${workspaceFolder}/Backend/.venv/bin/python",
+      "args": ["-m", "uvicorn", "app.main:app", "--reload"],
+      "options": {
+        "cwd": "${workspaceFolder}/Backend"
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    }
+  ]
+}

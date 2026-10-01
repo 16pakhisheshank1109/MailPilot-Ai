@@ -1,0 +1,13 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}/Backend/.venv/bin/python",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/Backend/.venv/lib/python3.11/site-packages"
+  ],
+  "python.analysis.pythonVersion": "3.11",
+  "python.terminal.activateEnvironment": true,
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/node_modules": true
+  }
+}

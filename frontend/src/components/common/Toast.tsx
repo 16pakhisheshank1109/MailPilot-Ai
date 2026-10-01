@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNotification } from '../../contexts/NotificationContext';
+import { useNotification } from '../../hooks/useNotification';
 import { CheckCircle2, AlertCircle, Info, AlertTriangle, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 

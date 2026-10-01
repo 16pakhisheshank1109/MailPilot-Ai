@@ -1,4 +1,5 @@
 from functools import lru_cache
+from typing import Any, cast
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -35,9 +36,13 @@ class Settings(BaseSettings):
     # -----------------------------
     # Google OAuth
     # -----------------------------
-    GOOGLE_CLIENT_ID: str = ""
-    GOOGLE_CLIENT_SECRET: str = ""
-
+        # -----------------------------
+    # Google OAuth
+    # -----------------------------
+    GOOGLE_CLIENT_ID: str
+    GOOGLE_CLIENT_SECRET: str 
+    GOOGLE_REDIRECT_URI: str = "http://localhost:8000/api/auth/google/callback"
+    FRONTEND_URL: str = "http://localhost:5173"
     # -----------------------------
     # Gemini
     # -----------------------------
@@ -46,12 +51,12 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(
         env_file=".env",
         case_sensitive=True,
+        extra="ignore",
     )
 
-
 @lru_cache
-def get_settings():
-    return Settings()
+def get_settings() -> Settings:
+    return cast(Any, Settings)()
 
 
 settings = get_settings()

@@ -5,8 +5,17 @@ This folder contains a scaffold of the backend application used by the MailPilot
 To run locally:
 
 ```bash
-python -m venv .venv
-.\.venv\Scripts\activate
-pip install -r requirements.txt
-uvicorn app.main:app --reload
+python3.11 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python -m uvicorn app.main:app --reload
+```
+
+On Windows PowerShell, activate the environment with `.venv\Scripts\Activate.ps1` instead.
+
+To install test tools and run the backend tests:
+
+```bash
+python -m pip install -r requirements-dev.txt
+python -m pytest
 ```

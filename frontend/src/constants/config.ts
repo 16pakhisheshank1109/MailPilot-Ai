@@ -4,7 +4,7 @@ import type { UserRole } from '../types/auth';
 export const APP_CONFIG = {
   name: 'MailPilot AI',
   tagline: 'Transform Your Inbox Into An Intelligent Workspace',
-  apiBaseUrl: import.meta.env.VITE_API_BASE_URL || 'https://api.mailpilot.ai/v1',
+  apiBaseUrl: import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000',
   mockDelayMs: 400,
 };
 

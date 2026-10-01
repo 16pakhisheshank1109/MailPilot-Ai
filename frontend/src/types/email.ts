@@ -35,4 +35,6 @@ export interface EmailFilter {
   searchQuery?: string;
   priorityOnly?: boolean;
   unreadOnly?: boolean;
+  starredOnly?: boolean;
+  archivedOnly?: boolean;
 }

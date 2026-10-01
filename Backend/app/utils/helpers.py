@@ -1,5 +1,7 @@
 """Misc helper functions (scaffold)."""
 
+from datetime import datetime, timezone
+
+
 def now_iso():
-    from datetime import datetime
-    return datetime.utcnow().isoformat() + "Z"
+    return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
